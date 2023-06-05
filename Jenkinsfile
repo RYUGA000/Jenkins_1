@@ -2,28 +2,31 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Hello') {
             steps {
-                git 'https://github.com/RYUGA000/Jenkins_1.git'
+                echo 'Hello World'
             }
         }
-
         stage('Build') {
             steps {
-                sh 'echo "Building step"'
+                echo 'Building'
             }
         }
-
-        stage('Test') {
-            steps {
-                sh 'python hello_world.py'
-            }
-        }
-
         stage('Deploy') {
             steps {
-                sh 'echo "Deployment step"'
+                echo 'Deploying'
             }
         }
+        stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }
+        stage('Release') {
+            steps {
+                echo 'Releasing'
+            }
+        }
+        
     }
 }
